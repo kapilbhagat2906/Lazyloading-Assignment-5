@@ -1,0 +1,21 @@
+$base-selector: '.animation';
+
+#{$base-selector} {
+    text-align: center;
+    width: 100%;
+
+    &_wrapper {
+        border: 2px solid #000;
+        display: inline-block;
+        margin-top: 20%;
+        padding: 20px;
+
+        >* {
+            display: inline-block;
+            padding: 20px;
+            opacity: .7;
+            border: 2px solid #b2b2b2;
+            font-size: 48px;
+        }
+    }
+}

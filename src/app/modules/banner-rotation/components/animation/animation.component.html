@@ -1,0 +1,8 @@
+<div class="animation">
+    <div class="animation_wrapper">
+        <div [@animateRotation]="startAnimation ? 'start': 'stop'"
+            (@animateRotation.done)="onAnimationEvent($event)">
+            {{text}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+$base-selector: '.controls';
+
+$controls-border-color: #b2b2b2;
+
+#{$base-selector} {
+    border: 2px solid $controls-border-color;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+
+    &_form {
+        text-align: left;
+
+        &_table {
+            tr {
+                td {
+                    padding: 10px;
+                }
+            }
+        }
+
+        &_label {
+            font-size: 18px;
+        }
+
+        &_field {
+            font-size: 18px;
+        }
+
+        button {
+            font-size: 18px;
+            margin-right: 20px;
+            padding: 4px 25px;
+            border-radius: 5px;
+        }
+
+        &_submit-button {
+            background: lightgreen;
+        }
+        &_reset-button {
+            background: lightcoral;
+            color: #fff;
+        }
+    }
+
+    &_messages {
+        text-align: left;
+        height: 100px;
+        overflow: auto;
+        padding-top: 20px;
+    }
+}

@@ -1,0 +1,23 @@
+$base-selector: '.countdown-timer';
+
+$count-down-timer-border-color: #000;
+
+#{$base-selector} {
+    border: 2px solid $count-down-timer-border-color;
+    text-align: center;
+    padding: 40px 0;
+
+    &_timer, &_controls {
+        display: inline-block;
+        width: 46%;
+        margin: 1%;
+        height: 300px;
+        vertical-align: middle;
+    }
+
+    &_status {
+        width: 94%;
+        margin: 1%;
+        display: inline-block;
+    }
+}

@@ -1,0 +1,17 @@
+<div class="status">
+    <div class="status_messages">
+        <div *ngFor="let message of messages">
+            Timer
+            <span [ngClass]="{ 'paused': message.operationType === 'paused', 'started': message.operationType === 'started'}">
+                <b>{{message.operationType | titlecase}}</b>
+            </span>
+            at {{message.dateTime | date: 'dd-MM-yyyy HH:mm:ssa'}}
+        </div>
+    </div>
+    <div class="status_stats">
+        <div *ngFor="let stat of statsObservable | async | keys">
+            <div class="status_stats_value">{{stat.value}}</div>
+            <div class="status_stats_label">{{stat.key | titlecase}}</div>
+        </div>
+    </div>
+</div>

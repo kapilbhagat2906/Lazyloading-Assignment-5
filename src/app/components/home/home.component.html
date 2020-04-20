@@ -1,0 +1,14 @@
+<div class="home">
+    <div class="home_assignments">
+        <div class="home_assignments_card"
+            *ngFor="let assignment of assignments">
+            <div class="home_assignments_card_details">
+                <h2 class="home_assignments_card_details_title">{{assignment.title}}</h2>
+                <span class="home_assignments_card_details_desc">{{assignment.description}}</span>
+            </div>
+            <a class="home_assignments_card_link" [routerLink]="assignment.routeLink">
+                Demo >>>
+            </a>
+        </div>
+    </div>
+</div>

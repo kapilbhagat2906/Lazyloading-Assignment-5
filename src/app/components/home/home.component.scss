@@ -1,0 +1,41 @@
+$base-selector: '.home';
+
+#{$base-selector} {
+    max-width: 1024px;
+    margin: auto;
+
+    &_assignments {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+
+        &_card {
+            flex: 0 40%;
+            width: 100%;
+            text-align: center;
+            border: 2px solid #d2d2d2;
+            margin: 40px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &_details {
+                text-align: left;
+
+                &_desc {
+                    font-size: 18px;
+                }
+            }
+            &_link {
+                text-decoration: none;
+                margin-top: 20px;
+                display: block;
+                font-weight: bold;
+                font-size: 20px;
+            }
+        }
+    }
+}

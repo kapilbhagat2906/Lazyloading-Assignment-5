@@ -1,0 +1,19 @@
+$base-selector: '.timer';
+
+$timer-border-color: #b2b2b2;
+
+#{$base-selector} {
+    border: 2px solid $timer-border-color;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+
+    &_title {
+        font-size: 24px;
+    }
+
+    &_count {
+        font-size: 36px;
+        font-weight: bold;
+    }
+}

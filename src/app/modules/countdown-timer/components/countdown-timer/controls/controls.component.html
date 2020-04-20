@@ -1,0 +1,29 @@
+<div class="controls">
+    <form novalidate class="controls_form" [formGroup]="timerForm" (ngSubmit)="startPauseTimer($event)">
+        <table class="controls_form_table">
+            <tbody>
+                <tr>
+                    <td>
+                        <label class="controls_form_label" for="timerLimit">Enter Timer Limit: </label>
+                    </td>
+                    <td>
+                        <input class="controls_form_field" type="text" id="timerLimit" name="timerLimit" formControlName="timerLimit" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button class="controls_form_submit-button" type="submit">{{isPaused ? 'Start' : 'Pause'}}</button>
+                        <button class="controls_form_reset-button" type="button" (click)="resetTimer($event)">Reset</button>
+                    </td>
+                </tr>
+        </table>
+    </form>
+    <div class="controls_messages">
+        <div *ngFor="let message of messages">
+            <span *ngIf="message.operationType.toLowerCase() === 'paused'">
+                <b>{{message.operationType | titlecase}}</b> at {{message.value}}
+            </span>
+        </div>
+    </div>
+</div>

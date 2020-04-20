@@ -1,0 +1,15 @@
+<div class="countdown-timer">
+    <div>
+        <div class="countdown-timer_timer">
+            <app-timer [timerCount]="timerCount" [isPaused]="isPaused"></app-timer>
+        </div>
+        <div class="countdown-timer_controls">
+            <app-controls (onTimerStartPause)="onTimerStartPause($event)"
+                (onTimerReset)="onTimerReset()">
+            </app-controls>
+        </div>
+    </div>
+    <div class="countdown-timer_status">
+        <app-status></app-status>
+    </div>
+</div>
