@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faTh, faList, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { ProductType } from '../../models/product.model';
 import { SortOrder } from 'src/app/modules/table-sorting/enums/sortOrder.enum';
-import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
   listIcon: IconDefinition = faList;
   sortOptions: Array<any> = [];
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -25,10 +25,15 @@ export class ProductListComponent implements OnInit {
   }
 
   getProducts ():void {
-    this.activatedRoute.data
-      .subscribe((data:  { data : Array<ProductType> }) => {
-        this.products = data.data;
-      })
+    this.productService.getData()
+      .subscribe({
+        next: (data: Array<ProductType>) => {
+          this.products = data;
+        },
+        complete: () => {
+          this.products = this.products || [];
+        }
+      });
   }
 
   initializeSortOptions () {

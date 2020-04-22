@@ -7,6 +7,7 @@ $product-list-view-options-icon-color: #a3a3a3;
     width: 1024px;
     margin: auto;
     border: 2px solid $product-list-border-color;
+    padding-bottom: 40px;
 
     &_card {
         box-sizing: border-box;
@@ -48,5 +49,11 @@ $product-list-view-options-icon-color: #a3a3a3;
             vertical-align: middle;
             font-size: 18px;
         }
+    }
+
+    &_loading, &_unavailable {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
     }
 }

@@ -8,7 +8,17 @@
             <option *ngFor="let option of sortOptions" [value]="option.value">{{option.label}}</option>
         </select>
     </div>
-    <app-product-card class="product-list_card" [view]="viewType" [ngClass]= "{'product-list_card-grid': viewType === 'grid', 'product-list_card-list': viewType === 'list'}"
-        *ngFor="let product of products | sort: sortOrder" [productInfo]="product">
-    </app-product-card>
+    <div class="product-list_loading" *ngIf="!products">
+        Loading Products...
+    </div>
+    <ng-container *ngIf="products">
+        <div class="product-list_unavailable" *ngIf="!products.length">
+            No Products Available!!
+        </div>
+        <ng-container *ngIf="products.length">
+            <app-product-card class="product-list_card" [view]="viewType" [ngClass]= "{'product-list_card-grid': viewType === 'grid', 'product-list_card-list': viewType === 'list'}"
+                *ngFor="let product of products | sort: sortOrder" [productInfo]="product">
+            </app-product-card>
+        </ng-container>
+    </ng-container>
 </div>

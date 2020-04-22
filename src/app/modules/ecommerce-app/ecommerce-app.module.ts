@@ -5,11 +5,8 @@ import { EcommerceAppRoutingModule } from './ecommerce-app-routing.module';
 import { FormsModule } from '@angular/forms';
 
 import { ProductService } from './services/product.service';
-import { HttpErrorHandler } from './services/http-error-handler.service';
-import { MessageService } from './services/message.service';
 import { ProductListComponent, ProductCardComponent } from './components';
 import { SortPipe } from './pipes/sort.pipe';
-import { ProductResolverService } from './services/product.resolve';
 
 @NgModule({
   declarations: [
@@ -24,10 +21,7 @@ import { ProductResolverService } from './services/product.resolve';
     FormsModule
   ],
   providers: [
-    ProductService,
-    HttpErrorHandler,
-    MessageService,
-    ProductResolverService
+    ProductService
   ]
 })
 export class EcommerceAppModule { }
